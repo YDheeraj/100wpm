@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+ * {
+    font-family: sans-serif;
+ }
+
+
+ .banner{
+    width: 100%;
+    min-height: calc(100vh - 120px - 50px);
+    background-image: linear-gradient(to bottom, #000000, #141a20);
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    margin: 2% auto;
+}
+
+.container{
+    width: 80%;
+    color: white;
+    margin: 2% auto;
+}
+
+
+ .btn{
+    max-width: 250px;
+    padding: 15px 15px;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+ }
+
+ .btn span{
+    background:#009688;
+    height:  100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    bottom: 0;
+    transition: 0.5s;
+ }
+
+
+ .btn:hover span{
+    width: 100%;
+}
+
+.btn:hover{
+    border:none
+}
+
+
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: portrait){
+   
+    .medium-flex-column {
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .medium-device-h1{
+        font-size: 50px !important;
+    }
+
+    .container{
+        margin-top: 30%;
+    }
+
+    .btn{
+        margin: 10px 10px;
+    }
+
+}
+
+@media only screen and (max-device-width: 768px){
+    .medium-device-h1{
+        font-size: 30px !important;
+    }
+
+    .medium-flex-column {
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1;
+    }
+
+    .btn{
+        margin: 10px 10px;
+    }
+
+
+    .content{
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-device-width: 768px) and (orientation:landscape){
+    .container{
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,47 @@
+
+
+.container-accuracy{
+    position: relative;
+    width: 7rem;
+height: 5rem;
+background: transparent;
+border-radius: 10px;
+}
+
+.container-accuracy p{
+    position: absolute;
+    left: 35px;
+    bottom: -8px;
+}
+
+.container-accuracy>h3{
+    font-size: 1em;
+}
+
+.progres-bar{
+    height: 40px;
+    background: rgb(14, 14, 14);
+    z-index: 0;
+    width: 19px;
+    position: absolute;
+    border-radius: 1px 1px 0px 0px;
+    bottom: 0px;
+}
+
+.progres-bar::after{
+    content: '';
+    position: absolute;
+    width: 9rem;
+    top: 41px;
+    height: 1px;
+    left: -4px;
+    background-color: rgb(0 0 0);
+}
+
+.stat-headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    height: 20px;
+}

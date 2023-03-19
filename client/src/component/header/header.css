@@ -1,0 +1,150 @@
+
+
+.navbar{
+
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.logo{
+  width: 200px;
+  cursor: pointer;
+}
+
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
+  position: relative;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar ul li a.active::after{
+  content: '';
+  height: 3px;
+  width: 100%;
+  background: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover:after{
+  width: 100%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  /* Styles for tablets in landscape mode go here */
+  .navbar ul {
+    display: none;
+  }
+  
+  .navbar .menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+    border: 1px solid #009688;
+    width: 50px;
+    height: 35px;
+    padding: 0px 0px 0px 12px;
+  }
+  
+  .navbar .menu-icon:before,
+  .navbar .menu-icon:after {
+    background-color: white;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    width: 22px;
+  }
+  
+  .navbar .menu-icon:before {
+    top: 10px;
+  }
+  
+  .navbar .menu-icon:after {
+    top: 20px;
+  }
+  
+  .navbar .menu-icon.active:before,
+  .navbar .menu-icon.active:after {
+    background-color: #009688;
+  }
+  
+  .navbar .menu-icon.active:before {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .navbar .menu-icon.active:after {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  
+  .navbar .menu {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    padding: 50px 0;
+    position: fixed;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    width: 100%;
+    z-index: 50;
+    
+  }
+  
+  .navbar .menu li {
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .navbar .menu li a {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  .navbar .menu.active {
+    transform: translateX(0);
+  }
+
+.navbar ul li:hover:after{
+  width: 0%;
+}
+
+.navbar ul li a.active::after{
+  width: 0%;
+}
+     
+}
+
+@media only screen and (max-device-width: 769px) and (orientation: portrait){
+    
+}

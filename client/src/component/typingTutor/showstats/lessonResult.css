@@ -1,0 +1,111 @@
+
+.lessonResult{
+  min-width: 500px;
+  background-color: #0f0f0f;
+  width: 700px;
+  margin: auto;
+  height: 60vh;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.lessonResult-head{
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  background: rgb(158, 158, 158);
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+
+
+.lessonResult-stats{
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #000000, #141a20);
+}
+
+.lessonResult-next{
+  width: 100%;
+  height: 30%;
+  border-radius: 0px 0px 10px 10px;
+  position:relative;
+  z-index: 0;
+}
+
+.box{
+width: 150px;
+height: 150px;
+border: 2px solid #00b0a0;
+padding: 14px;
+border-radius: 50%;
+}
+
+.box h3{
+    font-size: 4.5rem;
+    margin-top: 5px;
+}
+
+.box span{
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+
+.inactive-btn{
+  width: 200px;
+  padding: 15px 0;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-device-width: 500px) and (max-device-width: 1024px) and (orientation: portrait){
+  .lessonResult{
+    width: 550px;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-device-width: 768px) and (orientation:landscape){
+   .lessonResult{
+    min-width: 400px;
+    width: 400px;
+    height: 90vh;
+   }
+
+   .lessonResult-head{
+    height: 20%;
+   }
+
+   .lessonResult-stats{
+    height: 50%;
+   }
+
+   .lessonResult-next{
+    height: 20%;
+   }
+
+   .box{
+    width: 100px;
+    height: 100px;
+   }
+
+   .box h3{
+    font-size: 2.5rem;
+   }
+}

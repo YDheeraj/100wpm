@@ -1,0 +1,32 @@
+
+
+.para-container{
+    width: calc(100% - 155px);
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+
+.back-white{
+    background-color: white;
+    color: black;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+
+
+
+span.line::before {
+    content: '';
+    width: 2px;
+    background: #686868;
+    height: 40px;
+    margin: 1px;
+    display: inline-block;
+    transform: translate(-3px, -7px);
+    position: absolute;
+}

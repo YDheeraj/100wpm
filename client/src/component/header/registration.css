@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+}
+
+.registration{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  align-content: center;
+  background: url(../../images/regBack.jpg);
+  object-fit: cover;
+  background-size: 100% 100%;
+  width: 100%;
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+.registration form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 50%;
+  padding: 30px 10px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 0;
+  }
+  
+  .registration .input-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .registration .input-label span,
+  .checkbox-label span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color:white;
+    text-align: left;
+  }
+  
+ .registration  input[type="text"],
+.registration  input[type="email"],
+ .registration input[type="password"],
+ .registration input[type="checkbox"] {
+    width: 300px;
+height: 15px;
+padding: 20px;
+border: none;
+border-radius: 5px;
+background-color: #b5b5b5;
+color: #000000;
+font-size: 16px;
+margin-bottom: 0px;
+  }
+  
+ .registration input[type="checkbox"] {
+    margin-right: 10px;
+    width: 30px;
+    height: 25px;
+  }
+ .registration .checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .reg-btn{
+    padding: 10px 80px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reg-btn span{
+    background:#009688;
+    height:  100%;
+    width: 0%;
+    border-radius: 25px;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .reg-btn:hover span{
+    width: 100%;
+}
+
+@media only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: portrait){
+  
+  .registration{
+    flex-direction: column;
+    background: none;
+    background-image: linear-gradient(to bottom, #141a20,#000000);;
+    border: 1px solid #009688;
+  }
+}
+
+@media only screen and (max-device-width: 768px){
+  .registration{
+    flex-direction: column;
+    background: none;
+    background-image: linear-gradient(to bottom, #141a20,#000000);;
+    border: 1px solid #009688;
+  }
+
+  .registration input[type="text"],
+  .registration input[type="email"],
+  .registration input[type="password"],
+  .registration input[type="checkbox"] {
+    width: 250px;
+    padding: 15px;
+  }
+
+  .registration form :nth-last-child(2){
+    margin-right: 0px;
+  }
+
+  .registration form :nth-last-child(2) input{
+    width: 80px;
+    padding: 15px;
+  }
+
+  .registration form :nth-last-child(2) span{
+    width: 200px;
+  }
+}
+
+@media only screen and (max-device-width: 768px) and (orientation:landscape){
+
+  .registration{
+    width: 70%;
+    margin: auto;
+  }
+}
+
