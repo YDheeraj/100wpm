@@ -38,10 +38,6 @@ export const Test= () => {
   useEffect(()=>{
          fetchData();
   },[])
-  
-  // console.log(typeof para,"para");
-  // console.log(typeof paragraph[0],"paragraph");
-  
 
 
   const state=store.getState();

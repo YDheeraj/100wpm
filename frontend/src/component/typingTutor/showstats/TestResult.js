@@ -35,9 +35,12 @@ const [loading, setLoading] = useState(false);
       if (!res.status === 200) {
         const error = new Error(res.error);
         throw error;
+      
       }
     } catch (error) {
       console.log(error);
+      alert("Please login to get certificate");
+      navigate('/Login');
     }
   };
 
@@ -66,7 +69,7 @@ const generatePDF=()=>{
   doc.setFont('Times-Roman');
   doc.text(`${wpm}`,3.87,8.62);
   doc.text(`${accuracy}`,9.5,8.62);
-  doc.save('test.pdf');
+  doc.save(`${UserName}_Typing_Certificate.pdf`);
 }
 
 
@@ -84,6 +87,7 @@ const downloadCertificate=()=>{
     }
     else{
       alert("Login to get certificate");
+      console.log("login to get certificate")
     }
 }
 

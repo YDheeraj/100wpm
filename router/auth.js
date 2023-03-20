@@ -10,10 +10,10 @@ require("../db/conn");
 const User = require("../model/userSchema");
 
 
-router.get("/",(req,res)=>{
-    res.send("Hello world from the server router js");
+// router.get("/",(req,res)=>{
+//     res.send("Hello world from the server router js");
 
-});
+// });
 // using promises
 // router.post("/resister",(req,res)=>{
 //     const {name,email,phone,password,cpassword}=req.body;
@@ -46,7 +46,7 @@ router.get("/",(req,res)=>{
         try{
           const userexist = await User.findOne({email:email});
             if(userexist){
-                return res.status(422).json({error:"Email already exist"});
+                 res.status(422).json({error:"Email already exist"});
             }else if(password!=cpassword){
                 return res.status(422).json({error:"password and confirm password should be same"});
             }

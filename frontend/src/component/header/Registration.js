@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Footer from '../footer/Footer';
 import "./registration.css";
 import {NavLink, useNavigate} from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import regImg from '../../images/regBack.jpg'
 
 const  Registration = () => {
   const history = useNavigate();
+  const loginpage=useNavigate();
    const [user,setUser]=useState([{
         name:"",email:"",password:"",cpassword:"",check:""
    }])
@@ -18,13 +19,22 @@ const  Registration = () => {
    }
 
 
-
    const handlesubmit= async (e)=>{
     const {name,email,password,cpassword,check}=user;
     e.preventDefault();
     if(!name|| !email || !password|| !cpassword||!check ){
       return alert("pls fill the feild properly");
   }
+
+  const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  if (!passwordRegex.test(password)) {
+    return alert("Password should be at least 8 characters long and should contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+  }
+
+  if (password !== cpassword) {
+    return alert("Password and Confirm Password do not match");
+  }
+
      const res=  await  fetch("/register",{
       method:"POST",
       headers:{
@@ -35,16 +45,17 @@ const  Registration = () => {
       })
      });
      const data = await res.json();
-     if(data.status===422 || !data){
-      window.alert("Invalid Registration");
-      console.log("invalid Registration");
-     }
-     else{
+     console.log(data.error);
+     if (res.status === 422 && data.error === "Email already exist") {
+      window.alert("Email already exists, please sign in instead.");
+      loginpage("/Login");
+    } else if (res.status === 201) {
       window.alert("Registration Successful");
-       console.log("successful Registration");
-        //  sendUserstatus(setUser(false));
-       history("/");
-     }
+      console.log("successful Registration");
+      history("/");
+    } else {
+      window.alert("Registration Failed");
+    }
    }
 
 
@@ -53,6 +64,7 @@ const  Registration = () => {
     <div className='banner'>
     <div className='content'>
       <div className='registration'>
+       <img alt='registrationImage' src={regImg}></img>
     <form className='form-registration' onSubmit={handlesubmit}>
       <label className="input-label">
         <span>Name:</span>
